@@ -22,7 +22,7 @@ local Eggs = {"Timeless Egg", "Void Egg"}
 local Codes = {"charmroot", "applepower", "coinbanana", "mixpotion", "darkegg", "darkduo", "ancient", "eraeggs", "riftage", "grateful", "crownpotion"}
 local Items = {"Royal Potion", "Cocktail Potion", "Cash Potion", "Luck Potion", "Power Potion", "Banana Fruit", "Carrot Fruit", "Apple Fruit", "Orange Fruit", "Blueberry Fruit", "Golden Banana Fruit", "Golden Apple Fruit", "Golden Carrot Fruit", "Golden Orange Fruit", "Golden Blueberry Fruit"}
 local Juices = {"Royal Potion", "Cocktail Potion", "Cash Potion", "Luck Potion", "Power Potion", "Golden Banana Fruit", "Golden Apple Fruit", "Golden Carrot Fruit", "Golden Orange Fruit", "Golden Blueberry Fruit"}
-local AdminFoods = {"Pumpkin", "Tomato", "Apple", "Broccoli", "Hot Dog", "Banana", "Pizza", "Carrot", "Donut", "Cookie", "Lollipop", "Turkey"}
+local AdminFoods = {"Pumpkin", "Tomato", "Apple", "Broccoli", "Hot Dog", "Banana", "Pizza", "Carrot", "Donut", "Cookie", "Lollipop", "Burger", "Turkey"}
 
 local Window = WindUI:CreateWindow({Title = "Auto Farm Pro", Icon = "solar:home-bold", Theme = "Dark", ToggleKey = Enum.KeyCode.RightControl})
 
