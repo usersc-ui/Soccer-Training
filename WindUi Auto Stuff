@@ -18,7 +18,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 
 -- Listen
 local Balls = {"Green Ball", "Blue Ball", "Orange Ball", "Purple Ball", "Purple Ball", "Yellow Ball", "Red Ball", "Champions Ball", "Green Champions Ball", "Golden Ball", "Tongue Emoji Ball", "Space Ball", "Playground Ball", "Smile Emoji Ball", "Void Champions Ball", "Rainbow Ball"}
-local Eggs = {"Timeless Egg", "Void Egg"}
+local Eggs = {"Timeless Egg", "Void Egg", "Blaster Egg", "World Cup Season Egg"}
 local Codes = {"charmroot", "applepower", "coinbanana", "mixpotion", "darkegg", "darkduo", "ancient", "eraeggs", "riftage", "grateful", "crownpotion"}
 local Items = {"Royal Potion", "Cocktail Potion", "Cash Potion", "Luck Potion", "Power Potion", "Banana Fruit", "Carrot Fruit", "Apple Fruit", "Orange Fruit", "Blueberry Fruit", "Golden Banana Fruit", "Golden Apple Fruit", "Golden Carrot Fruit", "Golden Orange Fruit", "Golden Blueberry Fruit"}
 local Juices = {"Royal Potion", "Cocktail Potion", "Cash Potion", "Luck Potion", "Power Potion", "Golden Banana Fruit", "Golden Apple Fruit", "Golden Carrot Fruit", "Golden Orange Fruit", "Golden Blueberry Fruit"}
