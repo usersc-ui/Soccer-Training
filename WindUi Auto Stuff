@@ -13,6 +13,7 @@ local AdminPickUp = Knit.Services.AdminPanelService.RE.AdminFeedPickUp
 local AdminFeed = Knit.Services.AdminPanelService.RE.AdminFeedFeed
 local AdminChestUpdate = Knit.Services.AdminPanelService.RE.AdminChestUpdate
 local AdminChestClaim = Knit.Services.AdminChestService.RE.Claim
+local SeasonPassClaim = knit.Services.SeasonpassService.RE.Claim
 
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
@@ -32,6 +33,7 @@ MainTab:Section({Title = "Automation"})
 MainTab:Toggle({Title = "Auto Buy Balls", Value = false, Callback = function(s) getgenv().AutoBuyBalls = s if s then task.spawn(function() while getgenv().AutoBuyBalls do for _,b in ipairs(Balls) do if not getgenv().AutoBuyBalls then break end pcall(function() BuyEvent:FireServer(b) end) task.wait(0.4) end task.wait(0.5) end end) end end})
 MainTab:Toggle({Title = "Auto Train", Value = false, Callback = function(s) getgenv().AutoTrain = s if s then task.spawn(function() while getgenv().AutoTrain do pcall(function() TrainEvent:FireServer() end) task.wait(0.05) end end) end end})
 MainTab:Toggle({Title = "Auto Throw", Value = false, Callback = function(s) getgenv().AutoThrow = s if s then task.spawn(function() while getgenv().AutoThrow do pcall(function() ThrowService.RE.Throw:FireServer() task.wait(0.1) ThrowService.RE.Finish:FireServer() end) task.wait(0.1) end end) end end})
+MainTab:Toggle({Title = "Auto Claim Season Pass", Value = false, Callback = function(s) getgenv().AutoClaimSeasonPass = s if s then task.spawn(function() while getgenv().AutoClaimSeasonPass do for i = 1, 15 do if not getgenv().AutoClaimSeasonPass then break end pcall(function() SeasonPassClaim:FireServer("Premium", i) end) pcall(function() SeasonPassClaim:FireServer("Free", i) end) task.wait(0.1) end task.wait(5) end end) end end})
 
 MainTab:Section({Title = "Egg Hatching"})
 local selectedEgg = Eggs[1]
