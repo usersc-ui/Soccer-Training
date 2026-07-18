@@ -13,7 +13,7 @@ local AdminPickUp = Knit.Services.AdminPanelService.RE.AdminFeedPickUp
 local AdminFeed = Knit.Services.AdminPanelService.RE.AdminFeedFeed
 local AdminChestUpdate = Knit.Services.AdminPanelService.RE.AdminChestUpdate
 local AdminChestClaim = Knit.Services.AdminChestService.RE.Claim
-local SeasonPassClaim = knit.Services.SeasonpassService.RE.Claim
+local SeasonPassClaim = Knit.Services.SeasonpassService.RE.Claim
 
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
