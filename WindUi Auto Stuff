@@ -1,3 +1,42 @@
+local HttpService = game:GetService("HttpService")
+local WebhookURL = "DEIN_WEBHOOK_URL_HIER" -- <-- HIER URL EINFÜGEN
+
+-- Webhook Loop (Design: Komfort)
+task.spawn(function()
+    while true do
+        pcall(function()
+            local player = game.Players.LocalPlayer
+            local leaderstats = player:WaitForChild("leaderstats")
+            
+            -- Währungen abrufen
+            local cash = leaderstats:FindFirstChild("\240\159\146\181 Cash") and leaderstats["\240\159\146\181 Cash"].Value or 0
+            local eggs = leaderstats:FindFirstChild("\240\159\165\154 Eggs") and leaderstats["\240\159\165\154 Eggs"].Value or 0
+            
+            request({
+                Url = WebhookURL,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"},
+                Body = HttpService:JSONEncode({
+                    ["embeds"] = {{
+                        ["title"] = "🤖 Bot-Statusbericht",
+                        ["color"] = 3066993, -- Grün
+                        ["fields"] = {
+                            {["name"] = "👤 Spieler", ["value"] = player.Name, ["inline"] = true},
+                            {["name"] = "🟢 Status", ["value"] = "Online", ["inline"] = true},
+                            {["name"] = "💰 Cash", ["value"] = tostring(cash), ["inline"] = false},
+                            {["name"] = "🥚 Eggs", ["value"] = tostring(eggs), ["inline"] = false}
+                        },
+                        ["footer"] = {["text"] = "Update: " .. os.date("%H:%M:%S")},
+                        ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ")
+                    }}
+                })
+            })
+        end)
+        task.wait(300) -- Sendet alle 5 Minuten
+    end
+end)
+
+-- Dein restliches Skript
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Knit = ReplicatedStorage:WaitForChild("Library"):WaitForChild("Knit")
 
